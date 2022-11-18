@@ -34,7 +34,7 @@ git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/
 
 <a name="get-started"/>
 
-After completing the installation guide and following every step you can get started...
+After completing the installation guide you can get started by running the following commands in the project root.
 
 <a name="program"/>
 
@@ -60,10 +60,16 @@ echo $?
 
 ### ...for the program
 
+https://user-images.githubusercontent.com/60617712/202599026-994f1cce-122f-4688-ab0c-ce934f0e1fe3.mov
 
 <a name="unit-tests-demo"/>
 
 ### ...for the tests
+
+https://user-images.githubusercontent.com/60617712/202599049-83238bef-3e02-4d0a-81ff-83c6e30bff37.mov
+
+<a name="resources"/>
+
 
 ## Resources
 
