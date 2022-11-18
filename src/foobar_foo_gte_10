@@ -1,0 +1,43 @@
+#!/bin/bash
+
+function input_checker()
+{
+    if [[ -z "${!opt}" ]]; then
+        echo "INPUT ERROR: $opt is empty"; exit 5;  
+    fi
+    if [[ "$opt" = "Foo" ]] && [[ -n ${!opt//[0-9]/} ]] || 
+        [[ "$opt" = "FooBar" ]] && [[ -n ${!opt//[0-9]/} ]]; then
+        echo "INPUT ERROR: $opt is not numeric"; exit 5;
+    fi
+}
+
+function foobar_foo_gte_10()
+{
+    file="/tmp/foobar"
+    opt="Foo"
+    expected_value="10"
+    assert_msg="Option '$opt' is greater than or equal to '$expected_value' in '$file'"
+
+    [ ! -f $file ] && { echo "INPUT ERROR: $file configuration file was not found"; exit 5; }
+    
+    IFS='='
+    while read -r option value; do
+        option="${option//[[:space:]]/}"
+        value="${value//[[:space:]]/}"
+        if [ ! -z "$option" ] && [ ! -z "$value" ]; then
+            export "$option"="$value"
+        fi
+    done < $file
+    
+    input_checker
+
+    if [ ${!opt} -ge $expected_value ]; then
+        echo "PASS - $assert_msg"
+        return 0
+    else
+        echo "FAIL - $assert_msg"
+        return 1
+    fi
+}
+
+foobar_foo_gte_10
