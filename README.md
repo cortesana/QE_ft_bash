@@ -1,4 +1,4 @@
-# QE_ft_bash
+# QE_homework
 
 >  Foobar is a (imaginary) program... :speech_balloon:
 
@@ -19,7 +19,7 @@
 
 1. Clone or download the repository:
 ```bash
-git clone https://github.com/cortesana/QE_ft_bash.git
+git clone https://github.com/cortesana/QE_homework.git
 ```
 2. Add the src directory to your `PATH`:
 ```bash
